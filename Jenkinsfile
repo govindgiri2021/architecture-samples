@@ -8,16 +8,7 @@ node ('') {
            
             stage('Build & Deployment') {
                 def k8sImage = docker.image('govndgiri2021/androidapp:latest')
-                k8sImage.inside("-u 0:0 --entrypoint=''") {
-                    
-                 
-                          //sh 'sudo npm install -g react-native-cli'
-                         // sh 'npm install'
-                         // sh 'npm i -f'
-                          //sh "npm install -g npm"
-                          //sh "npm install -f"
-                          //sh "npm install --save"
-                          //snpm install -g npm
+                k8sImage.inside("-u 0:0 --entrypoint=''")
                           sh "chmod -R 777 /root/"
                           sh './gradlew clean'
                           sh "bundle install"
