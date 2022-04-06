@@ -8,7 +8,7 @@ node ('') {
            
             stage('Build & Deployment') {
                 def k8sImage = docker.image('govndgiri2021/androidapp:latest')
-                k8sImage.inside("-u 0:0 --entrypoint=''")
+                k8sImage.inside("-u 0:0 --entrypoint=''"){
                           sh "chmod -R 777 /root/"
                           sh './gradlew clean'
                           sh "bundle install"
