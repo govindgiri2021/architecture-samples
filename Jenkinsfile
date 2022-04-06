@@ -11,7 +11,7 @@ node ('') {
                 k8sImage.inside("-u 0:0 --entrypoint=''"){
                           sh "yarn add @react-native-community/cli-platform-android@3.0.3"
                           sh "yarn add react-native@0.61.5"
-                          sh "Removed "--quiet" from npx.cmd in native_modules.gradle""  
+                            
                           sh "chmod -R 777 /root/"
                           sh './gradlew clean'
                           sh "bundle install"
