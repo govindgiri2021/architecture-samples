@@ -9,7 +9,10 @@ node ('') {
             stage('Build & Deployment') {
                 def k8sImage = docker.image('govndgiri2021/androidapp:latest')
                 k8sImage.inside("-u 0:0 --entrypoint=''"){
-                         
+                          sh "npm cache clean --force"
+                          sh "rm -rf node_modules"
+                          sh "package-lock.json"
+                          sh "npm install"
                           sh "npm install --global yarn"
                           sh "yarn add @react-native-community/cli-platform-android@3.0.3"
                           sh "yarn add react-native@0.61.5"
