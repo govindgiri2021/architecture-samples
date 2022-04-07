@@ -11,7 +11,6 @@ node ('') {
                 k8sImage.inside("-u 0:0 --entrypoint=''"){
                           sh "npm cache clean --force"
                           sh "rm -rf node_modules"
-                         
                           sh "npm install"
                           sh "npm install --global yarn"
                           sh "yarn add @react-native-community/cli-platform-android@3.0.3"
