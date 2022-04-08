@@ -7,7 +7,7 @@ node ('') {
             }
            
             stage('Build & Deployment') {
-                def k8sImage = docker.image('govndgiri2021/androidapp:latest')
+                def k8sImage = docker.image('shridhanr/androidapp:latest')
                 k8sImage.inside("-u 0:0 --entrypoint=''"){
                           sh "npm cache clean --force"
                           //sh "rm -rf node_modules" 
